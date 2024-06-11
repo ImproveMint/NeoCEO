@@ -1,0 +1,36 @@
+{
+    "name": "NeoCEO",
+    "description": "Maximize your Neopet experience with real-time prices, streamlined search results, and smart profit optimization!",
+    "version": "2.0.0",
+    "manifest_version": 3,
+    "minimum_chrome_version": "93",
+    "permissions": [
+      "storage"
+    ],
+    "web_accessible_resources": [{
+        "resources": ["images/*", "html/*"],
+        "matches": ["<all_urls>"]
+      }],
+    "action": {
+     "default_popup": "popup.html"
+    },
+    "content_scripts": [
+        {
+            "matches": ["https://www.neopets.com/shops/wizard.phtml*"],
+            "all_frames": true,
+            "js": [
+                "shop-wizard-shop.js",
+                "neo-data-extractor.js",
+                "neo-utils.js",
+                "item-record.js",
+                "submarket-aggregator.js",
+                "shop-wizard-injector.js",
+                "shop-wizard-event.js",
+                "shop-wizard.js"
+            ],
+            "css": ["css/neostyles.css"],
+            "run_at": "document_end"
+        }
+    ]
+  }
+  

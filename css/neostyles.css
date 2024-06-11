@@ -1,0 +1,199 @@
+.progress-bar-container {
+  position: relative;
+  width: 100%;
+  height: 24px;
+  background: #DDD;
+}
+
+.progress-bar {
+  height: 24px;
+  background: linear-gradient(#D7FFE3, #0AFF54);
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -30%);
+  height: 24px;
+  font-family: "MuseoSansRounded700", 'Arial', sans-serif;
+  font-size: 10pt;
+  font-weight: bold;
+  width: 100%;
+  text-align: center;
+}
+
+.copyText {
+  position: relative;
+  cursor: pointer;
+}
+
+.copyText::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: 50%;
+  bottom: 100%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s;
+}
+
+.copyText.copied::after {
+  opacity: 1;
+}
+
+.submarket-0 { background-color: #FFB3BA!important; }
+.submarket-1 { background-color: #FFDFBA!important; }
+.submarket-2 { background-color: #FFFFBA!important; }
+.submarket-3 { background-color: #BAFFC9!important; }
+.submarket-4 { background-color: #BAE1FF!important; }
+.submarket-5 { background-color: #D3BAFF!important; }
+.submarket-6 { background-color: #FFB3FF!important; }
+.submarket-7 { background-color: #FF9BBA!important; }
+.submarket-8 { background-color: #ffb8b8!important; }
+.submarket-9 { background-color: #BAFFD3!important; }
+.submarket-10 { background-color: #BAFFB3!important; }
+.submarket-11 { background-color: #B3BAFF!important; }
+.submarket-12 { background-color: #FFB3BA!important; }
+
+.neoceo-button {
+  background: linear-gradient(135deg, #e38dff, #c285ff); /* Subtle gradient with pink and purple */
+  color: #000000;
+  border: 1px solid #000000; /* Light gray border to match the existing button */
+  border-radius: 3px; /* Slightly rounded corners to match the existing button */
+  padding: 3px 8px; /* Adjusted padding to match the existing button */
+  margin: 4px;
+  font-size: 10pt; /* Adjusted font size to match the existing button */
+  font-weight: bold;
+  font-family: Arial, sans-serif; /* Clean, simple font */
+  cursor: pointer; /* Pointer cursor on hover */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  transition: background 0.3s, transform 0.3s; /* Smooth transitions */
+}
+
+.neoceo-button:hover {
+  color: #ffffff; /* White text */
+  background: linear-gradient(135deg, #b32dd4, #9b00e6); /* Slightly darker gradient on hover */
+  transform: translateY(-1px); /* Slight lift on hover */
+}
+
+.neoceo-button:active {
+  background: linear-gradient(135deg, #991fb3, #8000cc); /* Even darker gradient when pressed */
+  transform: translateY(1px); /* Slight push down on active */
+}
+
+.neoceo-input {
+  color: #000;
+  background: linear-gradient(#539ff3,#2556ba);
+  border-radius: 15px;
+}
+
+.neoceo-price {
+  color: red;
+}
+
+.neoceo-shop-highlight {
+  background: linear-gradient(white,rgb(255, 186, 252)) !important;
+}
+
+.neoceo-ssw{
+  vertical-align: top;
+}
+
+.neoceo-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+.neoceo-quick-links-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin-top: 0; /* Remove top margin */
+  padding-top: 0;
+  padding-bottom: 10px; /* Add bottom padding */
+}
+
+.neoceo-ql {
+  background-color: #f8f9fa; /* Light grey background */
+  border: 1px solid #ddd; /* Light border */
+  border-radius: 5px;
+  padding: 5px; /* Reduce padding */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: Arial, sans-serif; /* Use Arial font */
+  font-size: 10pt; /* Slightly increase font size for readability */
+}
+
+.neoceo-ql-link {
+  color: #007bff; /* Link color */
+  text-decoration: none;
+  font-weight: bold;
+  display: flex;
+  align-items: center; /* Center align the link content */
+}
+
+.neoceo-ql-price {
+  margin-left: 5px;
+  color: #404244; /* Grey color */
+}
+
+.neoceo-ql-img {
+  margin-left: 5px;
+}
+
+/* Styles for the overlay buttons */
+.overlay-button {
+  position: absolute;
+  top: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 2px;
+  cursor: pointer;
+  display: none;
+  z-index: 1000;
+}
+
+/* Position buttons side by side */
+.overlay-button.shop-button {
+  right: 30px;
+}
+
+.overlay-button.data-button {
+  right: 5px;
+}
+
+/* Show buttons on hover */
+.img-container:hover .overlay-button {
+  display: block;
+}
+
+/* Styles for the tooltip */
+.tooltip {
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 12px;
+  display: none;
+  z-index: 1000;
+}
+
+.tooltip.visible {
+  display: block;
+}
+
