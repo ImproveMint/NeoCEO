@@ -49,13 +49,9 @@ class SubmarketAggregator {
     }
 
     processSubmarket(shopWizardShops) {
-        console.log("Processing new submarket");
         const newSubmarket = new Submarket(shopWizardShops);
-        console.log(shopWizardShops[0].owner);
-        console.log(this.submarkets);
 
         if (newSubmarket.isEqual(this.submarkets[newSubmarket.index])) {
-            console.log("Submarkets are equal");
             return false; // Submarkets are equal, no update needed
         }
 
@@ -64,7 +60,6 @@ class SubmarketAggregator {
         this.sortAllShops();
         this.update = true;
 
-        console.log(this.submarkets);
         return true;
     }
 
