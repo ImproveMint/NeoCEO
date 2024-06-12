@@ -49,7 +49,10 @@ class SubmarketAggregator {
     }
 
     processSubmarket(shopWizardShops) {
+        console.log("Processing new submarket");
         const newSubmarket = new Submarket(shopWizardShops);
+        console.log(shopWizardShops[0].owner);
+        console.log(this.submarkets);
 
         if (newSubmarket.isEqual(this.submarkets[newSubmarket.index])) {
             console.log("Submarkets are equal");
@@ -61,13 +64,14 @@ class SubmarketAggregator {
         this.sortAllShops();
         this.update = true;
 
+        console.log(this.submarkets);
         return true;
     }
 
-    calculateDistinctSubmarkets() {
+    distinctSubmarketsFound() {
         let distinctSubmarketsCount = this.submarkets.filter(submarket => submarket !== null).length;
     
-        if (this.emptySubmarketFound) {
+        if (this.foundEmptySubmarket) {
             distinctSubmarketsCount += 1;
         }
     

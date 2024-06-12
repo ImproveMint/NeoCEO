@@ -20,9 +20,7 @@ class ShopWizard {
         this.shopWizardEvent.processSearchEvent(); // will read the DOM and get all necessary information
   
         if (this.shopWizardEvent.isNewSearch) {
-          // this.itemRecord = await this.getItemRecord(this.shopWizardEvent.searchItem);
-        //   this.marketAgg = new SubmarketAggregator(this.itemRecord);
-          this.marketAgg = new SubmarketAggregator(null);
+            this.marketAgg = new SubmarketAggregator();
         }
   
         this.newSearchAttempt();
@@ -55,6 +53,7 @@ class ShopWizard {
             break;
         }
         this.injector.injectResults(this);
+        console.log(this.marketAgg.distinctSubmarketsFound());
     }
   
     observeWizardFormResults() {

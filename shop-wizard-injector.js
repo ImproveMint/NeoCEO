@@ -165,7 +165,7 @@ class ShopWizardInjector {
   
     async updateProgressBar(progressBarElement, progressBarText, swresults) {
       var theoreticalPercentage = Math.floor(NeoUtils.statisticalShopWizardProgress(swresults.searchAttempts));
-      var actualPercentage = Math.floor((100.0 / 13) * 1);
+      var actualPercentage = Math.floor((100.0 / 13) * swresults.marketAgg.distinctSubmarketsFound());
       var displayPercentage = Math.max(actualPercentage, theoreticalPercentage);
   
       progressBarElement.style.width = displayPercentage.toString() + "%";

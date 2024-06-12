@@ -22,7 +22,6 @@
                 "shop-wizard-shop.js",
                 "neo-data-extractor.js",
                 "neo-utils.js",
-                "item-record.js",
                 "submarket-aggregator.js",
                 "shop-wizard-injector.js",
                 "shop-wizard-event.js",

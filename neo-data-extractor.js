@@ -135,6 +135,23 @@ class NeoDataExtractor {
       static getItemRows() {
         return document.querySelectorAll(NeoDataExtractor.SELECTORS.SDB.SDB_ITEM_ROWS);
       }
+
+      static getItems(){
+        const itemRows = document.querySelectorAll('tr[bgcolor="#F6F6F6"], tr[bgcolor="#FFFFFF"]');
+
+        if (!itemRows){
+          console.log("No safety deposit box items found.");
+          return null;
+        }
+
+        const items = Array.from(itemRows);
+    
+        if (items.length > 30) {
+          throw new Error(`NeoDataExtractor found ${results.length} items in SDB. Only 30 or fewer results should ever be returned.`);
+        }
+    
+        return items.map(SDBItem.createItemFromSDBHTML);
+      }
     };
   
     // General utility methods
